@@ -175,6 +175,13 @@ public class SandboxListas
      */
     public void volverPositivos( )
     {
+    	int posicion = 0;
+    	for(int n : listaEnteros) {
+    		if (n < 0) {
+    			listaEnteros.set(posicion, (n*(-1)));
+    		}
+    	posicion++;
+    	}
     }
 
     /**
@@ -192,7 +199,9 @@ public class SandboxListas
      */
     public void organizarCadenas( )
     {
-
+    	Collections.sort(listaCadenas);
+    	Comparator<String> comparador = Collections.reverseOrder();
+    	Collections.sort(listaCadenas, comparador);
     }
 
     /**
@@ -270,7 +279,12 @@ public class SandboxListas
      */
     public void generarEnteros( int cantidad, int minimo, int maximo )
     {
-
+    	int posicion = 0;
+    	while( posicion < cantidad ) {
+    		int nuevoValor = (int) (Math.random() * maximo + minimo);
+    		listaEnteros.set(posicion, nuevoValor);
+    		posicion++;
+    		}
     }
 
 }

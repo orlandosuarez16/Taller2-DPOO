@@ -1,5 +1,6 @@
 package uniandes.dpoo.estructuras.logica;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -82,7 +83,9 @@ public class SandboxArreglos
      */
     public void agregarEntero( int entero )
     {
-
+    	int N = arregloEnteros.length;
+    	int[] arregloAumentado = Arrays.copyOf(arregloEnteros, N + 1);
+    	arregloAumentado[N] = entero;
     }
 
     /**
@@ -92,7 +95,9 @@ public class SandboxArreglos
      */
     public void agregarCadena( String cadena )
     {
-
+    	int N = arregloCadenas.length;
+    	String[] arregloAumentado = Arrays.copyOf(arregloCadenas, N + 1);
+    	arregloAumentado[N] = cadena;
     }
 
     /**
@@ -164,7 +169,12 @@ public class SandboxArreglos
      */
     public void volverPositivos( )
     {
-
+    	int posicion = 0;
+    	for(int n : arregloEnteros) {
+			if (n < 0) {
+				arregloEnteros[posicion]=
+    		}
+		}
     }
 
     /**
